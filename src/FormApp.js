@@ -8,6 +8,9 @@ export class FormApp extends Component {
         value: '',
         message: ''
       };
+    
+      this.handleInput = this.handleInput.bind(this);
+      this.send = this.send.bind(this);
     }
 
     handleInput({ target: { value } }) {
@@ -27,8 +30,8 @@ export class FormApp extends Component {
     render() {
       return (
         <div>
-          <input type="text" value={this.state.value} onChange={this.handleInput.bind(this)} />
-          <button onClick={this.send.bind(this)}>SEND</button>
+          <input type="text" value={this.state.value} onChange={this.handleInput} />
+          <button onClick={this.send}>SEND</button>
           <div>{this.state.message}</div>
         </div>
       );
